@@ -1,0 +1,76 @@
+package Banking;
+
+public class Bank_account {
+	 	private String account_name;
+	    private String mobile_number;
+	    private double balance;
+	    private String password;
+	    
+	    
+	    public Bank_account(String n, String phone,double balance, String password){
+	        this.account_name = n;
+	        this.mobile_number = phone;
+	        this.balance=balance;
+	        this.password = password;
+	    }
+
+	    
+	  	    public Bank_account(String name, String number,double balance){
+	  	        this.account_name = name;
+	  	        this.mobile_number = number;
+	  	        this.balance=balance;
+	  	    }
+
+
+	  	    void info() {
+	  	    	System.out.println("Account Holder's Name: "+account_name);
+	  	    	System.out.println("Mobile Number: "+mobile_number);
+	  	    	System.out.println("Current Balance: "+ balance);
+	  	    	System.out.println("\n");
+	  	    }
+	  	    
+
+	  	  public void add_money(double amount){
+	          this.balance += amount;
+	          System.out.println("Added Amount: " + amount);
+	          System.out.println("Current Balance: "+ balance);
+	          System.out.println("\n");
+	      }
+
+
+	  	  public void cash_out(double amount, String pin){
+	  		  
+	  	  if (pin != this.password){
+	              System.out.println("Incorrect Pin.\n");
+	              return;
+	          }
+	          else{
+	              if (balance >= amount){
+	                  balance -= amount;
+	                  System.out.println("Amount Withdrawn: " + amount);
+	    	          System.out.println("Current Balance: "+ balance);
+	    	          System.out.println("\n");
+	              }
+
+	              else {
+	                  System.out.println("Failed to cash out due to balance limit.\n");
+	              }
+	          }
+	      }
+
+
+	  	 public void cash_out(double amount){  
+	  		 if(password==null) {
+	  			 System.out.println("You need to set your pin for cash out.");	 
+	  		 }
+	  	 }
+		  
+	  	 
+
+	  	 public void set_pin(String password) {
+	  		 this.password=password;
+	  		 System.out.println("Pin updated.\n");
+	  	 }
+
+}
+
