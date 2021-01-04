@@ -1,0 +1,27 @@
+package Banking;
+
+public class Test {
+	public void start(){
+	Bank_account Rong = new Bank_account("Rong", "01315905137",50000, "5454" );
+	Rong.info();
+	
+	
+	Bank_account Noshin = new Bank_account("Noshin", "01762821321",20000);
+    Noshin.info();
+    
+
+    System.out.println("\nBanking Information for Rong: ");
+    Rong.add_money(10000);
+    Rong.cash_out(35000,"8787");
+    Rong.cash_out(30000,"5454");
+    
+    
+
+    System.out.println("\nBanking Information for Noshin: ");
+    Noshin.add_money(15000);
+    Noshin.set_pin("5678");
+    Noshin.cash_out(5000,"5457");
+    Noshin.cash_out(40000,"5678");
+	
+	}
+}
